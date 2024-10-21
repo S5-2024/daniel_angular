@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import { Task } from '../../classes/Task';
 
 @Component({
   selector: 'taskcard',
@@ -9,5 +10,5 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './taskcard.component.css'
 })
 export class TaskcardComponent {
-
+  @Input() task!: Task
 }

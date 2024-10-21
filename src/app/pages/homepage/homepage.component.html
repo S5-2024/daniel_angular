@@ -1,19 +1,67 @@
 <div class="content">
   <div class="functions">
-    
-    <button mat-fab> 
+    <div class="search">
+      @switch (filterInput) { 
+        @case ("title") {
+          <mat-form-field>
+            <input type="text" matInput placeholder="Pesquisar por titulo..." />
+          </mat-form-field>
+        }
+        @case ("deadLine") {
+          <mat-form-field>
+            <mat-label>Data Limite...</mat-label>
+            <input matInput [matDatepicker]="datepicker" />
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker" />
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        }
+        @case ("status"){
+          <mat-form-field>
+            <mat-label>Status...</mat-label>
+            <mat-select >
+              <mat-option [value]="statusInstance.pendente">Pendente</mat-option>
+              <mat-option [value]="statusInstance.iniciado">Iniciado</mat-option>
+              <mat-option [value]="statusInstance.concluido">Concluido</mat-option>
+            </mat-select>
+          </mat-form-field>
+        }
+      }
+     
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>filter_list</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeFilterType('title')">
+        <mat-icon>search</mat-icon>
+        <span>Filtrar por titulo</span>
+      </button>
+      <button mat-menu-item (click)="changeFilterType('deadLine')">
+        <mat-icon>date_range</mat-icon>
+        <span>Filtrar por Data Limite</span>
+      </button>
+      <button mat-menu-item (click)="changeFilterType('status')">
+        <mat-icon>check</mat-icon>
+        <span>Filtrar por Status</span>
+      </button>
+    </mat-menu>
+
+    <button mat-fab extend class="add">
       <mat-icon>add</mat-icon>
+      Adicionar tarefa
     </button>
   </div>
-  <ul class="tasklist"> <!--| Lista de componentes-->
+  <ul class="tasklist">
+    <!--| Lista de componentes-->
+    @for (task of filteredTaskList; track $index) {
     <li>
-      <taskcard />
+      <taskcard [task]="task"></taskcard>
     </li>
-    <li>
-      <taskcard />
-    </li>
-    <li>
-      <taskcard />
-    </li>
+    }
   </ul>
 </div>
