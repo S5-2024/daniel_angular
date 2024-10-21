@@ -1,0 +1,30 @@
+<!-- <h2 mat-dialog-title>{{info.title}}</h2> -->
+<button class="editBtn" mat-icon-button (click)="changeView()">
+  <mat-icon>mode_edit</mat-icon>
+</button>
+<div mat-dialog-title id="header">
+  <h3>
+    {{ info.title }}
+  </h3>
+</div>
+
+<mat-dialog-content id="content">
+  <div class="dates">
+    <p>
+      Data de criação: <span>{{ info.creationDate.toLocaleDateString() }}</span>
+    </p>
+    <p>
+      Data Limite: <span>{{ info.deadLineDate.toLocaleDateString() }}</span>
+    </p>
+  </div>
+  <div class="dialog_body">
+    <p>
+      Status: <span [className]="info.status">{{ info.status }}</span>
+    </p>
+    <p>{{ info.longDescription }}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button>Salvar</button>
+</mat-dialog-actions>

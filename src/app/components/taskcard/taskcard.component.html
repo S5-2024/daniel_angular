@@ -4,7 +4,7 @@
             <h3>{{task.title}}</h3>
             <p>{{task.deadLineDate.toLocaleDateString()}}</p>
         </div>
-        <p>Status: <span>Placeholder</span></p>
+        <p>Status: <span [className]="task.status">{{task.status}}</span></p>
     </header>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia
@@ -14,6 +14,6 @@
     cubilia curae; Maecenas ac nibh ut nisi egestas pellentesque quis eu sapien.
   </p>
   <footer>
-    <button mat-flat-button>Click Here</button>
+    <button mat-flat-button (click)="openModal()">Click Here</button>
   </footer>
 </div>

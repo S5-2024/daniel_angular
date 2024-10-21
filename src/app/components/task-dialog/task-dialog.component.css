@@ -1,0 +1,15 @@
+.dates{
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+}
+.editBtn{
+    position: absolute;
+    top: .4rem;
+    right: .8rem;
+    z-index: 1;
+}
+
+.editTitle{
+    font-size: 1.17rem;
+}

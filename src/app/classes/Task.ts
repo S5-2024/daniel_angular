@@ -17,4 +17,8 @@ export class Task {
             this.deadLineDate = deadLineDate;
             this.status = status;
     }
+
+    setStatus(status: Status){
+        this.status = status
+    }
 }
