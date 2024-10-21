@@ -1,0 +1,14 @@
+.card_container{
+    width: 50vw;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title > h3 {
+    margin: 0;
+}

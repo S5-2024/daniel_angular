@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tasklist{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.tasklist > li{
+    margin-bottom: 20px;
+}

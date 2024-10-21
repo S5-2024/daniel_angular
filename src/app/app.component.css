@@ -1,0 +1,8 @@
+.logobar{
+    background-color: #ba005c;
+    padding: 20px;
+}
+.logobar > h1 {
+    margin: 0;
+    color: white;
+}
