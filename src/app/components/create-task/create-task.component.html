@@ -1,0 +1,51 @@
+<form class="creation" [formGroup]="taskForm" (ngSubmit)="saveInfo()">
+  <h2 mat-dialog-title>Criar Tarefa</h2>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="Titulo"
+      required="true"
+      formControlName="title"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      placeholder="Descrição Curta"
+      formControlName="shortDescription"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Descrição Longa"
+      formControlName="longDescription"
+      required
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      [matDatepicker]="datepicker"
+      placeholder="Data Limite"
+      formControlName="deadLine"
+      required
+    />
+    <mat-datepicker-toggle matIconSuffix [for]="datepicker" />
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancelar</button>
+        <button mat-button matDatepickerApply>Aplicar</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button type="submit">Salvar</button>
+  </mat-dialog-actions>
+</form>

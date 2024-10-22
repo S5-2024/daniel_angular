@@ -1,0 +1,9 @@
+.creation{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.creation > input{
+    width: 100%;
+}
