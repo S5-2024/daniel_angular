@@ -29,11 +29,11 @@ import { MatInputModule } from '@angular/material/input';
 export class TaskDialogComponent {
   data = inject(MAT_DIALOG_DATA);
   info = this.data.info
+  protected isEditable:boolean = false;
+
+  
 
   changeView(){
-    const header = document.getElementById("header")
-    const content = document.getElementById("content")
-
-    
+    this.isEditable = !this.isEditable;
   }
 }
