@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, model, Output, signal, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, ChangeDetectorRef } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { Task } from '../../classes/Task';
