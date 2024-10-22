@@ -56,7 +56,13 @@ ng add @angular/material
 ng serve
 ```
 
+<div align=center> 
 
+
+<img src="https://github.com/S5-2024/daniel_angular/blob/main/readme_assets/exemplogif.gif"  >
+
+
+</div>
 
 
 
