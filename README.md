@@ -59,7 +59,7 @@ ng serve
 <div align=center> 
 
 
-<img src="https://github.com/S5-2024/daniel_angular/blob/main/readme_assets/exemplogif.gif"  >
+<img src="https://github.com/S5-2024/daniel_angular/blob/main/readme_assets/Captura%20de%20tela%202024-10-22%20163902.png"  >
 
 
 </div>
