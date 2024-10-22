@@ -4,13 +4,13 @@
       @switch (filterInput) { 
         @case ("title") {
           <mat-form-field>
-            <input type="text" matInput placeholder="Pesquisar por titulo..." />
+            <input id="titleFilter" autocomplete="false" type="text" matInput placeholder="Pesquisar por titulo..." (input)="filter($event)" />
           </mat-form-field>
         }
         @case ("deadLine") {
           <mat-form-field>
             <mat-label>Data Limite...</mat-label>
-            <input matInput [matDatepicker]="datepicker" />
+            <input matInput [matDatepicker]="datepicker" (dateInput)="filter($event)" (dateChange)="filter($event)"/>
             <mat-datepicker-toggle matIconSuffix [for]="datepicker" />
             <mat-datepicker #datepicker>
               <mat-datepicker-actions>
@@ -23,7 +23,7 @@
         @case ("status"){
           <mat-form-field>
             <mat-label>Status...</mat-label>
-            <mat-select >
+            <mat-select [(value)]="selectionValue" (valueChange)="filter($event)">
               <mat-option [value]="statusInstance.pendente">Pendente</mat-option>
               <mat-option [value]="statusInstance.iniciado">Iniciado</mat-option>
               <mat-option [value]="statusInstance.concluido">Concluido</mat-option>
@@ -58,10 +58,15 @@
   </div>
   <ul class="tasklist">
     <!--| Lista de componentes-->
-    @for (task of filteredTaskList; track $index) {
-    <li>
-      <taskcard [task]="task"></taskcard>
-    </li>
+    @if(filteredTaskList.length < 1){
+      <p>Nenhuma tarefa encontrada...</p>
+    }@else {
+      @for (task of filteredTaskList; track $index) {
+        <li>
+          <taskcard [task]="task"></taskcard>
+        </li>
+      }
     }
+    
   </ul>
 </div>
