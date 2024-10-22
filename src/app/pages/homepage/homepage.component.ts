@@ -44,9 +44,8 @@ export class HomepageComponent {
   ngOnInit(){
     this.filteredTaskList.sort((a,b) => b.status.localeCompare(a.status))
   }
-
+  
   ngDoCheck(){
-    this.filteredTaskList = this.taskList
     this.filteredTaskList = this.filteredTaskList.sort((a,b) =>{ 
       return b.status.localeCompare(a.status)
     })
@@ -102,8 +101,9 @@ export class HomepageComponent {
       console.log(result)
       let newTask = new Task(result.title, result.shortDescription, result.longDescription, new Date(), result.deadLine, Status.pendente)
       this.taskList.push(newTask)
+      this.filteredTaskList = [...this.taskList]
     })
-    /* this.cdr.detectChanges() */
+    this.cdr.detectChanges()
   }
 
 
