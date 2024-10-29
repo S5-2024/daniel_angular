@@ -7,11 +7,7 @@
         <p>Status: <span [className]="task.status">{{task.status}}</span></p>
     </header>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia
-    consectetur rhoncus. Nunc malesuada mauris ut elit auctor, id convallis urna
-    euismod. Vestibulum euismod ultrices leo, a eleifend enim tristique quis.
-    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-    cubilia curae; Maecenas ac nibh ut nisi egestas pellentesque quis eu sapien.
+    {{task.shortDescription}}
   </p>
   <footer>
     <button mat-flat-button (click)="openDescriptionModal()" style="margin-right: 1rem;">Ver Detalhes</button>

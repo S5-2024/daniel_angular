@@ -58,6 +58,7 @@ export class HomepageComponent {
   }
 
   filter(event: any){
+    this.filteredTaskList = [...this.taskList]
     switch(this.filterInput){
       case("title"):
         var inputValue = event.target.value.toLowerCase().trim();
